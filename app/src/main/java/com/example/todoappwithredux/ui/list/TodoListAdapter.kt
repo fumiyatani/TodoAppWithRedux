@@ -1,4 +1,4 @@
-package com.example.todoappwithredux.ui.todo
+package com.example.todoappwithredux.ui.list
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -7,13 +7,13 @@ import com.example.todoappwithredux.data.local.TodoEntity
 
 class TodoAdapter(
     diffUtl: DiffUtil.ItemCallback<TodoEntity> = defaultDiffUtil
-) : ListAdapter<TodoEntity, TodoViewHolder>(diffUtl) {
+) : ListAdapter<TodoEntity, TodoListViewHolder>(diffUtl) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
-        return TodoViewHolder.createViewHolder(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoListViewHolder {
+        return TodoListViewHolder.createViewHolder(parent)
     }
 
-    override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TodoListViewHolder, position: Int) {
         val item = getItem(position)
         holder.bindData(item)
     }
