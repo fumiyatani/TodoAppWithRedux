@@ -1,4 +1,4 @@
-package com.example.todoappwithredux.ui.todo
+package com.example.todoappwithredux.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,17 +6,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todoappwithredux.data.local.TodoEntity
 import com.example.todoappwithredux.databinding.ItemTodoBinding
 
-class TodoViewHolder(private val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root) {
+class TodoListViewHolder(private val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root) {
     fun bindData(todo: TodoEntity) {
         binding.todo = todo
     }
 
     companion object {
-        fun createViewHolder(parent: ViewGroup): TodoViewHolder {
+        fun createViewHolder(parent: ViewGroup): TodoListViewHolder {
             val inflater = LayoutInflater.from(parent.context)
             val binding = ItemTodoBinding.inflate(inflater, parent, false)
 
-            return TodoViewHolder(binding)
+            return TodoListViewHolder(binding)
         }
     }
 }
